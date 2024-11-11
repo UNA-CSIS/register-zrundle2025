@@ -1,25 +1,27 @@
+DROP DATABASE softball;
 CREATE DATABASE softball;
 
 USE softball;
 CREATE TABLE games
 (
-  id int auto_increment PRIMARY KEY,
-  opponent varchar(255),
-  site varchar(50),
-  result char(1)
+    id int auto_increment PRIMARY KEY,
+    opponent varchar(255),
+    site varchar(50),
+    result char(1)
 );
 
-CREATE TABLE users 
+CREATE TABLE users
 (
-    id int primary key auto_increment, 
-    username varchar(255), 
-    password varchar(255) 
+    id int primary key auto_increment,
+    username varchar(255),
+    password varchar(255)
 );
 
 -- insert a row into the users table for the administrator:
 -- username = admin
 -- password = pwd
 INSERT INTO users (username, password) VALUES ('admin', '$2y$10$6EagpQz90eekX4cIlXjWdu/iCCo3jmSPrLmm9kJ/OVzbmwHaJZGzG');
+INSERT INTO users (username, password) VALUES ('admin', 'pwd');
 
 INSERT into games (opponent, site, result) VALUES('North Georgia','Neutral','W');
 INSERT into games (opponent, site, result) VALUES('Augusta University','Neutral','W');
